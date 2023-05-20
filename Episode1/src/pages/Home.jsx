@@ -7,8 +7,8 @@ const Home = () => {
         isLoading,
         error,
         refetch
-    } = useQuery(["cat"], () => {
-        return axios.get("https://catfact.ninja/fact").then((res) => res.data)
+    } = useQuery(["cat"], async () => {
+        return await axios.get("https://catfact.ninja/fact").then((res) => res.data)
     })
     if (isLoading) {
         return <h1>Loading....</h1>
